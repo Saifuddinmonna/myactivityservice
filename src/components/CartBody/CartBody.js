@@ -5,7 +5,7 @@ const CartBody = (props) => {
 	
 	const { cart, Totaltime } = props;
 	return (
-		<div className="activityscarts-maindiv ">
+		
 			<div className=" activityscart border p-2 m-2 rounded-3 shadow text-wrap position-relative d-flex flex-column justify-content-between">
 				<img
 					id="img-control"
@@ -26,7 +26,7 @@ const CartBody = (props) => {
 					Add to Cart
 				</button>
 			</div>
-		</div>
+		
 	);
 };
 

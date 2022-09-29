@@ -1,57 +1,25 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Header from "./components/Header/Header";
-import { useState, useEffect } from "react";
-import CartBody from "./components/CartBody/CartBody";
-import Gettotaltime from "./components/GettotalTime/Gettotaltime";
-function App() {
-	const [cartbody, setCartbody] = useState([]);
-	const [brtime, setBrtime] = useState('')
-	const [totaltime, setTotaltime] = useState([]);
-	const [sumtime, setSumtime] = useState(0);
-	useEffect(() => {
-		fetch("/activitys.json")
-			.then((res) => res.json())
-			.then((data) => setCartbody(data));
-	}, []);
+import React, { useState } from "react";
 
-	// console.log(cartbody);
+const InformationDiv = (selectProduct) => {
 
-	const Totaltime = (selectProduct) => {
-		let newCart = [...totaltime, parseInt (selectProduct.time)];
-		setTotaltime(newCart)
+        const [brtime, setBrtime] = useState("");
 		
+        const [sumtime, setSumtime] = useState(0);
+        
+       
+        
 
-	setTotaltime(newCart);
-		
-		console.log(totaltime);
-		const totaltimenumber = parseInt(totaltime);
-		// { const totaltimesum = totaltimenumber.reduce(
-		// 	(accumulator, currentValue) => accumulator + currentValue,
-		// );
-		// 	console.log( 'reduced',totaltimesum);
-		// };
-		setSumtime(totaltime.reduce((a, v) => (a = a + v), 0));
-	};
 
-	
-console.log(totaltime);
-	const Handletimeonclick = (e) => {
-		console.log(e.target.innerText);
-		setBrtime(e.target.innerText);
-	};
+      
+		const Handletimeonclick = (e) => {
+			console.log(e.target.innerText);
+			setBrtime(e.target.innerText);
+		};
+
+
 	return (
-		<div className=" main-container container ">
-			<div className=" activityscarts-maindiv ">
-				{cartbody.map((cart) => (
-					<CartBody
-						key={cart.id}
-						cart={cart}
-						Totaltime={ Totaltime }></CartBody>
-					
-				))}
-			</div>
-			<div className="informationdiv border warning p-3 m-2 rounded-2 shadow">
+		<div>
+			<div className="border warning p-3 m-2 rounded-2 shadow">
 				<div className="d-flex align-items-center  align-content-center text-center justify-content-center  p-2 ">
 					<img
 						className="img-fluid w-25"
@@ -66,7 +34,7 @@ console.log(totaltime);
 						<p>Mymensingh,Bangladesh</p>
 					</div>
 				</div>
-				<div className="d-flex flex-wrap ">
+				<div className="d-flex ">
 					<div className=" bg-light rounded-circle p-2 m-3 border text-center">
 						<p className="">
 							70kg <br /> Weight
@@ -126,12 +94,12 @@ console.log(totaltime);
 						<h5 className="bg-light d-inline-block">
 							Exercise Details
 						</h5>
-						<p className="d-inline-block">{ sumtime}</p>
+						<p className="d-inline-block">{sumtime}</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	);
-}
+};
 
-export default App;
+export default InformationDiv;

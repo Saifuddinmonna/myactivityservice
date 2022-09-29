@@ -2,7 +2,7 @@
 	{
 		"id": "63345da20b595464ad37a4b7",
 		"name": "Owen Jones",
-		"time": "30",
+		"time": "20",
 		"img": "https://unsplash.com/photos/jD4MtXnsJ6w/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mzd8fGV4ZXJjaXNlfGVufDB8MHx8fDE2NjQzNzYxNDU&force=true",
 		"about": " Excepteur ipsum officia consequat nulla excepteur reprehenderit commodo reprehenderit.",
 		"age": "20- 30"
@@ -18,7 +18,7 @@
 	{
 		"id": "63345da2d0ac420f7af94550",
 		"name": "Gallegos Levine",
-		"time": "30",
+		"time": "40",
 		"img": "https://unsplash.com/photos/UUf5nxhEhAs/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NTl8fGV4ZXJjaXNlfGVufDB8MHx8fDE2NjQzNzY0ODA&force=true",
 		"about": "Quis id mollit quis qui esse aute fugiat fugiat nulla velit voluptate amet deserunt sit. ",
 		"age": "45- 55"
@@ -26,7 +26,7 @@
 	{
 		"id": "63345da2fa760c467f0daa85",
 		"name": "Clarissa Dickerson",
-		"time": "30",
+		"time": "50",
 		"img": "https://unsplash.com/photos/IZOAOjvwhaM/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTh8fGV4ZXJjaXNlfGVufDB8fHx8MTY2NDM3NjExMQ&force=true",
 		"about": "Tempor pariatur velit adipisicing in Lorem consectetur laboris laborum proident labore. ",
 		"age": "30- 40"
@@ -34,7 +34,7 @@
 	{
 		"id": "63345da2bf369cb53baefaf6",
 		"name": "Kaufman Mcpherson",
-		"time": "30",
+		"time": "60",
 		"img": "https://unsplash.com/photos/y7ywDXWJ-JU/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mzl8fGV4ZXJjaXNlfGVufDB8fHx8MTY2NDM3NjExNg&force=true",
 		"about": " Proident id ad est est excepteur exercitation laborum exercitation adipisicing qui fugiat.",
 		"age": " 20- 35 "
@@ -50,7 +50,7 @@
 	{
 		"id": "63345da23802d78e0bc731db",
 		"name": "Watkins Lott",
-		"time": "20",
+		"time": "70",
 		"img": "https://unsplash.com/photos/WX7FSaiYxK8/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MzZ8fGV4ZXJjaXNlfGVufDB8MHx8fDE2NjQzNzYxNDU&force=true",
 		"about": "Officia anim do et minim quis consectetur officia. ",
 		"age": "30- 40"

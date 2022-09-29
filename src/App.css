@@ -1,4 +1,4 @@
-.App {
+/* .App {
 	text-align: center;
 }
 
@@ -15,21 +15,60 @@
 
 .App-link {
 	color: #61dafb;
-}
+} */
 
 .main-container {
 	display: grid;
-	grid-template-columns: 4fr 1fr;
-  column-gap: 0px;
+	grid-template-columns: 3fr 1fr;
+	justify-content: center;
+	
+	column-gap: 0px;
 }
-
 
 .activityscarts-maindiv {
-        display: grid;
+	display: grid;
 	grid-template-columns: auto auto auto;
 	justify-content: center;
-  min-width: 190px;
+	min-width: 190px;
 }
-.warning{
-  background-color: rgba(177, 239, 69, 0.04);
+.informationdiv {
+	min-width: 200px;
+}
+
+.warning {
+	background-color: rgba(177, 239, 69, 0.04);
+}
+
+@media only screen and (max-width: 900px) {
+
+	.main-container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		justify-content: center;
+		column-gap: 0px;
+	}
+	.activityscarts-maindiv {
+		display: grid;
+		grid-template-columns: auto auto;
+		justify-content: center;
+		min-width: 190px;
+	}
+	
+}
+
+@media only screen and (max-width: 764) {
+
+	.main-container {
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-content: center;
+		column-gap: 0px;
+	}
+	.activityscarts-maindiv {
+		display: grid;
+		grid-template-columns: 1fr;
+		justify-content: center;
+		min-width: 190px;
+	}
+	
 }
