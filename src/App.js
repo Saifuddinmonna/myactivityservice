@@ -21,10 +21,10 @@ function App() {
 	const	Getlocalcartstore =() => {
 			const storedCart = localStorage.getItem("Break-Time");
 
-			const shoppingCart = storedCart;
+			const shoppingCart = JSON.parse(storedCart);
 
 			setBrtime(shoppingCart);
-			console.log("brearktime", shoppingCart);
+			console.log("brearktime",  shoppingCart);
 	};
 		Getlocalcartstore();
 	}, [cartbody]);
