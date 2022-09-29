@@ -6,24 +6,36 @@ import CartBody from "./components/CartBody/CartBody";
 import Gettotaltime from "./components/GettotalTime/Gettotaltime";
 function App() {
 	const [cartbody, setCartbody] = useState([]);
-	const [brtime, setBrtime]=useState('')
+	const [brtime, setBrtime] = useState('')
+	const [totaltime, setTotaltime] = useState([]);
+	const [sumtime, setSumtime] = useState(0);
 	useEffect(() => {
 		fetch("/activitys.json")
 			.then((res) => res.json())
 			.then((data) => setCartbody(data));
 	}, []);
 
-	console.log(cartbody);
+	// console.log(cartbody);
 
-	const Totaltime = (cart) => {
-		let totaltime = 0;
-		const newtime = parseInt(cart.time); 
-		const newtotaltime = 0 + newtime;
-		totaltime = newtotaltime;
-		console.log("cart from func", totaltime);
+	const Totaltime = (selectProduct) => {
+		let newCart = [...totaltime, parseInt (selectProduct.time)];
+		setTotaltime(newCart)
 		
-	}
 
+	setTotaltime(newCart);
+		
+		console.log(totaltime);
+		const totaltimenumber = parseInt(totaltime);
+		// { const totaltimesum = totaltimenumber.reduce(
+		// 	(accumulator, currentValue) => accumulator + currentValue,
+		// );
+		// 	console.log( 'reduced',totaltimesum);
+		// };
+		setSumtime(totaltime.reduce((a, v) => (a = a + v), 0));
+	};
+
+	
+console.log(totaltime);
 	const Handletimeonclick = (e) => {
 		console.log(e.target.innerText);
 		setBrtime(e.target.innerText);
@@ -35,7 +47,8 @@ function App() {
 					<CartBody
 						key={cart.id}
 						cart={cart}
-						Totaltime={Totaltime}></CartBody>
+						Totaltime={ Totaltime }></CartBody>
+					
 				))}
 			</div>
 			<div className="border warning p-3 m-2 rounded-2 shadow">
@@ -113,7 +126,7 @@ function App() {
 						<h5 className="bg-light d-inline-block">
 							Exercise Details
 						</h5>
-						<p className="d-inline-block">00000</p>
+						<p className="d-inline-block">{ sumtime}</p>
 					</div>
 				</div>
 			</div>
