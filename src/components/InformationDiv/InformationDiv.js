@@ -1,102 +1,69 @@
-import React, { useState } from "react";
+import React from "react";
 
-const InformationDiv = (selectProduct) => {
-
-        const [brtime, setBrtime] = useState("");
-		
-        const [sumtime, setSumtime] = useState(0);
-        
-       
-        
-
-
-      
-		const Handletimeonclick = (e) => {
-			console.log(e.target.innerText);
-			setBrtime(e.target.innerText);
-		};
-
-
+const InformationDiv = () => {
 	return (
-		<div>
-			<div className="border warning p-3 m-2 rounded-2 shadow">
-				<div className="d-flex align-items-center  align-content-center text-center justify-content-center  p-2 ">
-					<img
-						className="img-fluid w-25"
-						src="/images/profile.png"
-						alt=""
-					/>
-					<div className="m-2">
-						<p className="fw-bolder space-top1">
-							{" "}
-							Saifuddin Ahammed{" "}
-						</p>
-						<p>Mymensingh,Bangladesh</p>
-					</div>
-				</div>
-				<div className="d-flex ">
-					<div className=" bg-light rounded-circle p-2 m-3 border text-center">
-						<p className="">
-							70kg <br /> Weight
-						</p>
-					</div>
-					<div className=" bg-light rounded-circle p-2 m-3 border text-center">
-						<p>
-							5.5 <br /> Height
-						</p>
-					</div>
-					<div className=" bg-light rounded-circle p-2 m-3 border text-center">
-						<p>
-							30yrs <br /> Age
-						</p>
-					</div>
-				</div>
-
-				<div className="m-2 p-2 border border-light  rounded-3">
-					<p className=" text-bolder fw-bolder">Add A Break </p>
-					<div className="m-2 p-2 d-flex flex-wrap cursor-click btn">
-						<span
-							onClick={Handletimeonclick}
-							className="   timeitems rounded-circle bg-light border m-2 p-1">
-							10s
-						</span>{" "}
-						<span
-							onClick={Handletimeonclick}
-							className="   timeitems rounded-circle bg-light border m-2 p-1">
-							20s
-						</span>{" "}
-						<span
-							onClick={Handletimeonclick}
-							className="   timeitems rounded-circle bg-light border m-2 p-1">
-							30s
-						</span>{" "}
-						<span
-							onClick={Handletimeonclick}
-							className="   timeitems rounded-circle bg-light border m-2 p-1">
-							40s
-						</span>{" "}
-						<span
-							onClick={Handletimeonclick}
-							className="   timeitems rounded-circle bg-light border m-2 p-1">
-							50s
-						</span>
-					</div>
-				</div>
-
-				<div className="m-2 p-2 ">
-					<h5>Exerxise Details</h5>
-					<div className="bg-light p-3 m-2 d-flex justify-content-around">
-						<h5>Add a break </h5>
-						<p>{brtime}</p>
-					</div>
-					<div className="bg-light p-3 m-2 rounded-3 border-info d-flex justify-content-around">
-						{" "}
-						<h5 className="bg-light d-inline-block">
-							Exercise Details
-						</h5>
-						<p className="d-inline-block">{sumtime}</p>
-					</div>
-				</div>
+		<div className="container">
+			<h3 className="container mt-5 m-2 p-3 border rounded-3 shadow">
+				Questions And Answer========>
+			</h3>
+			<div className="container m-2 p-3 border rounded-3 shadow">
+				<h3>How does the React works?</h3>
+				<p>
+					{" "}
+					React is a declarative, efficient, and flexible JavaScript
+					library for building user interfaces. 'V' denotes the view
+					in MVC. ReactJS is an open-source, component-based front end
+					library responsible only for the view layer of the
+					application. <br />
+					In English ReactJS divides the UI into isolated reusable
+					pieces of code known as components. React components work
+					similarly to JavaScript functions as they accept arbitrary
+					inputs called properties or props. It's possible to have as
+					many components as necessary without cluttering your code.
+				</p>
+			</div>
+			<div className="container m-2 p-3 border rounded-3 shadow">
+				<h3>
+					What is the difference between state and props in React?
+				</h3>
+				<p>
+					{" "}
+					Props are used to pass data from one component to another.
+					The state is a local data storage that is local to the
+					component only and cannot be passed to other components. The
+					this.setState property is used to update the state values in
+					the component.
+				</p>
+				<p>
+					This is the 'functional' aspect of React. All data (almost)
+					flows downwards. Since the prop is owned by the parent, only
+					the parent should change it. Ideally, children should be
+					stateless. That's not possible in practice (see forms
+					documentation on the React site). 2. You can either feed it
+					in at the top, which is a recommended practice, or you can
+					store it in separate objects. One popular approach is Flux,
+					which uses singleton objects called Stores. This is part of
+					a larger architectural pattern. It is also open sourced from
+					Facebook and designed to work with React.
+				</p>
+			</div>
+			<div className="container m-2 p-3 border rounded-3 shadow">
+				<h3 className="text-capitalize">
+					{" "}
+					what are the function of useEffeect exclude data loading?
+				</h3>
+				<p>
+					Earlier, we looked at how to express side effects that don’t
+					require any cleanup. However, some effects do. For example,
+					we might want to set up a subscription to some external data
+					source. In that case, it is important to clean up so that we
+					don’t introduce a memory leak! Let’s compare how we can do
+					it with classes and with Hooks. <br />
+					In some cases, cleaning up or applying the effect after
+					every render might create a performance problem. In class
+					components, we can solve this by writing an extra comparison
+					with prevProps or prevState inside componentDidUpdate:
+				</p>
 			</div>
 		</div>
 	);

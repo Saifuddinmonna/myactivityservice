@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import { useState, useEffect } from "react";
 import CartBody from "./components/CartBody/CartBody";
 import Gettotaltime from "./components/GettotalTime/Gettotaltime";
+import InformationDiv from "./components/InformationDiv/InformationDiv";
 function App() {
 	const [cartbody, setCartbody] = useState([]);
 	const [brtime, setBrtime] = useState('')
@@ -132,6 +133,7 @@ console.log(totaltime);
 					</div>
 				</div>
 			</div>
+			<InformationDiv></InformationDiv>
 		</div>
 	);
 }
