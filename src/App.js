@@ -17,6 +17,10 @@ function App() {
 
 	const Totaltime = (cart) => {
 		let totaltime = 0;
+		const newtime = parseInt(cart.time); 
+		const newtotaltime = 0 + newtime;
+		totaltime = newtotaltime;
+		console.log("cart from func", totaltime);
 		
 	}
 
