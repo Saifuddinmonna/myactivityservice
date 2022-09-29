@@ -7,7 +7,8 @@ import Gettotaltime from "./components/GettotalTime/Gettotaltime";
 import InformationDiv from "./components/InformationDiv/InformationDiv";
 function App() {
 	const [cartbody, setCartbody] = useState([]);
-	const [brtime, setBrtime] = useState('')
+	const [brtime, setBrtime] = useState('');
+	const [brtime2, setBrtime2] = useState('');
 	const [totaltime, setTotaltime] = useState([]);
 	const [sumtime, setSumtime] = useState(0);
 	useEffect(() => {
@@ -16,6 +17,21 @@ function App() {
 			.then((data) => setCartbody(data));
 	}, []);
 
+	useEffect(() => {
+	const	Getlocalcartstore =() => {
+			const storedCart = localStorage.getItem("Break-Time");
+
+			const shoppingCart = storedCart;
+
+			setBrtime(shoppingCart);
+			console.log("brearktime", shoppingCart);
+	};
+		Getlocalcartstore();
+	}, [cartbody]);
+		
+	
+
+		
 	// console.log(cartbody);
 
 	const Totaltime = (selectProduct) => {
@@ -34,12 +50,17 @@ function App() {
 		// };
 		setSumtime(totaltime.reduce((a, v) => (a = a + v), 0));
 	};
-
+console.log(brtime);
 	
-console.log(totaltime);
+// console.log(totaltime);
 	const Handletimeonclick = (e) => {
-		console.log(e.target.innerText);
+		// console.log(e.target.innerText);
+		let timevalue = {};
+		 timevalue = e.target.innerText;
 		setBrtime(e.target.innerText);
+		localStorage.setItem("Break-Time", JSON.stringify(timevalue));
+		
+		
 	};
 	return (
 		<div>
@@ -121,7 +142,10 @@ console.log(totaltime);
 						<h5>Exerxise Details</h5>
 						<div className="bg-light p-3 m-2 d-flex justify-content-around">
 							<h5>Add a break </h5>
-							<p>{brtime}</p>
+							<p>
+								{brtime}
+								{brtime2}
+							</p>
 						</div>
 						<div className="bg-light p-3 m-2 rounded-3 border-info d-flex justify-content-around">
 							{" "}
