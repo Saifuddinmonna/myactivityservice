@@ -39,7 +39,7 @@
 	background-color: rgba(177, 239, 69, 0.04);
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 992px) {
 
 	.main-container {
 		display: grid;
@@ -49,18 +49,18 @@
 	}
 	.activityscarts-maindiv {
 		display: grid;
-		grid-template-columns: auto auto;
+		grid-template-columns: auto;
 		justify-content: center;
 		min-width: 190px;
 	}
 	
 }
 
-@media only screen and (max-width: 764) {
+@media only screen and (max-width: 768) {
 
 	.main-container {
 		display: grid;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1;
 		justify-content: center;
 		column-gap: 0px;
 	}

@@ -5,8 +5,8 @@ const Header = () => {
 			<div>
 				<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
 					<div class="container-fluid">
-						<a class="navbar-brand" href="#">
-							Navbar
+						<a class="navbar-brand fw-bolder" href="#">
+							My Activities Services
 						</a>
 						<button
 							class="navbar-toggler"
@@ -40,7 +40,7 @@ const Header = () => {
 								</li>
 								<li class="nav-item">
 									<a
-										class="nav-link disabled"
+										class="nav-link "
 										href="#"
 										tabindex="-1"
 										aria-disabled="true">
