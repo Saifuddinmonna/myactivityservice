@@ -1,4 +1,4 @@
-/* .App {
+.App {
 	text-align: center;
 }
 
@@ -15,13 +15,13 @@
 
 .App-link {
 	color: #61dafb;
-} */
+}
 
 .main-container {
 	display: grid;
 	grid-template-columns: 3fr 1fr;
 	justify-content: center;
-	
+
 	column-gap: 0px;
 }
 
@@ -37,15 +37,11 @@
 
 .warning {
 	background-color: rgba(177, 239, 69, 0.04);
-
-
 }
 
 
-
-
 @media only screen and (max-width: 992px) {
-	*{
+	* {
 		font-size: auto;
 	}
 
@@ -62,25 +58,24 @@
 		min-width: 190px;
 		font-size: auto;
 	}
-	
 }
 
-@media only screen and (max-width: 768) {
-	*{
+@media only screen and (max-width: 768px) {
+	* {
 		font-size: auto;
 	}
 
-	/* .main-container {
+	.main-container {
 		display: grid;
-		grid-template-columns: 1;
+		grid-template-columns: auto;
 		justify-content: center;
 		column-gap: 0px;
-	} */
+	}
+
 	.activityscarts-maindiv {
 		display: grid;
 		grid-template-columns: 1fr;
 		justify-content: center;
 		min-width: 190px;
 	}
-	
 }

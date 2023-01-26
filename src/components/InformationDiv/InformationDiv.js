@@ -2,11 +2,11 @@ import React from "react";
 
 const InformationDiv = () => {
 	return (
-		<div className="container">
+		<div className="container text-wrap">
 			<h3 className="container mt-5 m-2 p-3 border rounded-3 shadow">
-				Questions And Answer========>
+				
 			</h3>
-			<div className="container m-2 p-3 border rounded-3 shadow">
+			<div className="container m-2  p-3 border rounded-3 shadow">
 				<h3>How does the React works?</h3>
 				<p>
 					{" "}

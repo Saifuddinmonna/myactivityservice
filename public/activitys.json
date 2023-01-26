@@ -1,7 +1,7 @@
 [
 	{
 		"id": "63345da20b595464ad37a4b7",
-		"name": "Owen Jones",
+		"name": "Muscular Endurance",
 		"time": "20",
 		"img": "https://unsplash.com/photos/jD4MtXnsJ6w/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mzd8fGV4ZXJjaXNlfGVufDB8MHx8fDE2NjQzNzYxNDU&force=true",
 		"about": " Excepteur ipsum officia consequat nulla excepteur reprehenderit commodo reprehenderit.",
@@ -9,7 +9,7 @@
 	},
 	{
 		"id": "63345da237287d397a562346",
-		"name": "Melton Larson",
+		"name": "Exercise Classes",
 		"time": "30",
 		"img": "https://unsplash.com/photos/Vz0RbclzG_w/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Nnx8ZXhlcmNpc2V8ZW58MHx8fHwxNjY0Mzc2MTEx&force=true",
 		"about": "Deserunt aute proident mollit nulla elit in minim proident.",
@@ -17,7 +17,7 @@
 	},
 	{
 		"id": "63345da2d0ac420f7af94550",
-		"name": "Gallegos Levine",
+		"name": " Yoga",
 		"time": "40",
 		"img": "https://unsplash.com/photos/UUf5nxhEhAs/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NTl8fGV4ZXJjaXNlfGVufDB8MHx8fDE2NjQzNzY0ODA&force=true",
 		"about": "Quis id mollit quis qui esse aute fugiat fugiat nulla velit voluptate amet deserunt sit. ",
@@ -25,7 +25,7 @@
 	},
 	{
 		"id": "63345da2fa760c467f0daa85",
-		"name": "Clarissa Dickerson",
+		"name": "Muscular Strength",
 		"time": "50",
 		"img": "https://unsplash.com/photos/IZOAOjvwhaM/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTh8fGV4ZXJjaXNlfGVufDB8fHx8MTY2NDM3NjExMQ&force=true",
 		"about": "Tempor pariatur velit adipisicing in Lorem consectetur laboris laborum proident labore. ",
@@ -33,7 +33,7 @@
 	},
 	{
 		"id": "63345da2bf369cb53baefaf6",
-		"name": "Kaufman Mcpherson",
+		"name": " Riding ",
 		"time": "60",
 		"img": "https://unsplash.com/photos/y7ywDXWJ-JU/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mzl8fGV4ZXJjaXNlfGVufDB8fHx8MTY2NDM3NjExNg&force=true",
 		"about": " Proident id ad est est excepteur exercitation laborum exercitation adipisicing qui fugiat.",
@@ -41,7 +41,7 @@
 	},
 	{
 		"id": "63345da237c3d50e9bf65dd7",
-		"name": "Rivera Patel",
+		"name": "Running.",
 		"time": "40",
 		"img": "https://unsplash.com/photos/XFneC_rHR48/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NTR8fGV4ZXJjaXNlfGVufDB8fHx8MTY2NDM3NjEyNQ&force=true",
 		"about": "Elit qui irure laboris sit enim sit dolore ipsum et excepteur ipsum cillum.",
@@ -49,7 +49,7 @@
 	},
 	{
 		"id": "63345da23802d78e0bc731db",
-		"name": "Watkins Lott",
+		"name": "Running.",
 		"time": "70",
 		"img": "https://unsplash.com/photos/WX7FSaiYxK8/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MzZ8fGV4ZXJjaXNlfGVufDB8MHx8fDE2NjQzNzYxNDU&force=true",
 		"about": "Officia anim do et minim quis consectetur officia. ",
@@ -57,7 +57,7 @@
 	},
 	{
 		"id": "63345da2f520a2130ad05368",
-		"name": "Hickman Avery",
+		"name": "Flexibility",
 		"time": "30",
 		"img": "https://unsplash.com/photos/HyvE5SiKMUs/download?force=true",
 		"about": "Dolore ullamco veniam eiusmod id nostrud duis commodo aliqua elit.",
@@ -65,7 +65,7 @@
 	},
 	{
 		"id": "63345da2247d705bb55a3d15",
-		"name": "Charmaine Ware",
+		"name": "Jogging",
 		"time": "20",
 		"img": "https://unsplash.com/photos/YxCrQm9XNgg/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTA1fHxleGVyY2lzZXxlbnwwfDB8fHwxNjY0MzgwMTgw&force=true",
 		"about": "Fugiat dolor nulla tempor magna dolor adipisicing nostrud ex.",

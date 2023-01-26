@@ -3,50 +3,42 @@ import React from 'react';
 const Header = () => {
         return (
 			<div>
-				<nav class="navbar navbar-expand-lg navbar-dark bg-primary ">
-					<div class="container-fluid">
-						<a class="navbar-brand fw-bolder" href="#">
+				<nav className="navbar navbar-expand-lg navbar-dark bg-primary ">
+					<div className="container-fluid">
+						<a className="navbar-brand fw-bolder" href="#">
 							My Activities Services
 						</a>
 						<button
-							class="navbar-toggler"
+							className="navbar-toggler"
 							type="button"
 							data-bs-toggle="collapse"
 							data-bs-target="#navbarNav"
 							aria-controls="navbarNav"
 							aria-expanded="false"
 							aria-label="Toggle navigation">
-							<span class="navbar-toggler-icon"></span>
+							<span className="navbar-toggler-icon"></span>
 						</button>
-						<div class="collapse navbar-collapse" id="navbarNav">
-							<ul class="navbar-nav">
-								<li class="nav-item">
+						<div className="collapse navbar-collapse" id="navbarNav">
+							<ul className="navbar-nav">
+								<li className="nav-item">
 									<a
-										class="nav-link active"
+										className="nav-link active"
 										aria-current="page"
 										href="#">
 										Home
 									</a>
 								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">
+								<li className="nav-item">
+									<a className="nav-link" href="#">
 										Features
 									</a>
 								</li>
-								<li class="nav-item">
-									<a class="nav-link" href="#">
+								<li className="nav-item">
+									<a className="nav-link" href="#">
 										Pricing
 									</a>
 								</li>
-								<li class="nav-item">
-									<a
-										class="nav-link "
-										href="#"
-										tabindex="-1"
-										aria-disabled="true">
-										Disabled
-									</a>
-								</li>
+								
 							</ul>
 						</div>
 					</div>

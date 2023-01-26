@@ -1,16 +1,14 @@
-import logo from "./logo.svg";
+
 import "./App.css";
 import Header from "./components/Header/Header";
 import { useState, useEffect } from "react";
 import CartBody from "./components/CartBody/CartBody";
-import Gettotaltime from "./components/GettotalTime/Gettotaltime";
 import InformationDiv from "./components/InformationDiv/InformationDiv";
 function App() {
 	const [cartbody, setCartbody] = useState([]);
 	const [brtime, setBrtime] = useState('');
-	const [brtime2, setBrtime2] = useState('');
 	const [totaltime, setTotaltime] = useState([]);
-	const [sumtime, setSumtime] = useState(0);
+	const [sumtime, setSumtime] = useState();
 	useEffect(() => {
 		fetch("/activitys.json")
 			.then((res) => res.json())
@@ -29,26 +27,38 @@ function App() {
 		Getlocalcartstore();
 	}, [cartbody]);
 		
-	
+	useEffect(() => { 
+
+		
+	},
+	);
 
 		
 	// console.log(cartbody);
 
 	const Totaltime = (selectProduct) => {
+
+		
 		let newCart = [...totaltime, parseInt (selectProduct.time)];
 		setTotaltime(newCart)
 		
 
-	setTotaltime(newCart);
-		
+		setTotaltime(newCart);
 		console.log(totaltime);
-		const totaltimenumber = parseInt(totaltime);
+		// const totaltimenumber = parseInt(totaltime);
 		// { const totaltimesum = totaltimenumber.reduce(
 		// 	(accumulator, currentValue) => accumulator + currentValue,
 		// );
 		// 	console.log( 'reduced',totaltimesum);
 		// };
-		setSumtime(totaltime.reduce((a, v) => (a = a + v), 0));
+		setSumtime(
+			totaltime.reduce(
+				(a, v) => (a = a + v),
+				parseInt(selectProduct.time),
+			),
+		);
+		
+		
 	};
 console.log(brtime);
 	
@@ -83,15 +93,15 @@ console.log(brtime);
 						/>
 						<div className="m-2">
 							<p className="fw-bolder space-top1">
-								{" "}
-								Saifuddin Ahammed{" "}
+								
+								Saifuddin Ahammed
 							</p>
 							<p>Mymensingh,Bangladesh</p>
 						</div>
 					</div>
 					<div className="d-flex flex-wrap ">
 						<div className=" bg-light rounded-circle p-2 m-3 border text-center">
-							<p className="">
+							<p >
 								70kg <br /> Weight
 							</p>
 						</div>
@@ -114,12 +124,12 @@ console.log(brtime);
 								onClick={Handletimeonclick}
 								className="   timeitems rounded-circle bg-light border m-2 p-1">
 								10s
-							</span>{" "}
+							</span>
 							<span
 								onClick={Handletimeonclick}
 								className="   timeitems rounded-circle bg-light border m-2 p-1">
 								20s
-							</span>{" "}
+							</span>
 							<span
 								onClick={Handletimeonclick}
 								className="   timeitems rounded-circle bg-light border m-2 p-1">
@@ -144,7 +154,7 @@ console.log(brtime);
 							<h5>Add a break </h5>
 							<p>
 								{brtime}
-								{brtime2}
+								
 							</p>
 						</div>
 						<div className="bg-light p-3 m-2 rounded-3 border-info d-flex justify-content-around">
