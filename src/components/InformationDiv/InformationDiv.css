@@ -1,0 +1,42 @@
+.container {
+    animation: fadeIn 0.5s ease;
+}
+
+.container h3 {
+    transition: all 0.3s ease;
+}
+
+.container h3:hover {
+    transform: translateX(10px);
+    color: #0d6efd;
+}
+
+.container p {
+    transition: all 0.3s ease;
+    opacity: 0.8;
+}
+
+.container p:hover {
+    opacity: 1;
+    transform: translateX(5px);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.border {
+    transition: all 0.3s ease;
+}
+
+.border:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+} 
