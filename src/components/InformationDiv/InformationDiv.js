@@ -3,67 +3,79 @@ import React from "react";
 const InformationDiv = () => {
 	return (
 		<div className="container text-wrap">
-			<h3 className="container mt-5 m-2 p-3 border rounded-3 shadow">
-				
-			</h3>
-			<div className="container m-2  p-3 border rounded-3 shadow">
-				<h3>How does the React works?</h3>
-				<p>
-					{" "}
-					React is a declarative, efficient, and flexible JavaScript
-					library for building user interfaces. 'V' denotes the view
-					in MVC. ReactJS is an open-source, component-based front end
-					library responsible only for the view layer of the
-					application. <br />
-					In English ReactJS divides the UI into isolated reusable
-					pieces of code known as components. React components work
-					similarly to JavaScript functions as they accept arbitrary
-					inputs called properties or props. It's possible to have as
-					many components as necessary without cluttering your code.
-				</p>
+			<div className="container mt-5 m-2 p-3 border rounded-3 shadow">
+				<div className="row align-items-center">
+					<div className="col-md-4">
+						<img 
+							src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+							alt="Fitness Journey" 
+							className="img-fluid rounded shadow"
+						/>
+					</div>
+					<div className="col-md-8">
+						<h2 className="display-4 mb-4">Welcome to Your Fitness Journey</h2>
+						<p className="lead">Start your transformation today and discover a healthier, stronger you!</p>
+					</div>
+				</div>
 			</div>
+
 			<div className="container m-2 p-3 border rounded-3 shadow">
-				<h3>
-					What is the difference between state and props in React?
-				</h3>
-				<p>
-					{" "}
-					Props are used to pass data from one component to another.
-					The state is a local data storage that is local to the
-					component only and cannot be passed to other components. The
-					this.setState property is used to update the state values in
-					the component.
-				</p>
-				<p>
-					This is the 'functional' aspect of React. All data (almost)
-					flows downwards. Since the prop is owned by the parent, only
-					the parent should change it. Ideally, children should be
-					stateless. That's not possible in practice (see forms
-					documentation on the React site). 2. You can either feed it
-					in at the top, which is a recommended practice, or you can
-					store it in separate objects. One popular approach is Flux,
-					which uses singleton objects called Stores. This is part of
-					a larger architectural pattern. It is also open sourced from
-					Facebook and designed to work with React.
-				</p>
+				<div className="row align-items-center">
+					<div className="col-md-4">
+						<img 
+							src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+							alt="Exercise Importance" 
+							className="img-fluid rounded shadow"
+						/>
+					</div>
+					<div className="col-md-8">
+						<h3 className="mb-3">Why is Regular Exercise Important?</h3>
+						<p>
+							Regular exercise is crucial for maintaining a healthy lifestyle and overall well-being. It helps in managing weight, reducing the risk of chronic diseases, and improving mental health. Exercise strengthens your heart and improves circulation, which can help prevent heart disease and other health conditions. <br />
+							Incorporating physical activity into your daily routine doesn't have to be complicated. Even 30 minutes of moderate exercise each day can make a significant difference in your health. Whether it's walking, jogging, swimming, or strength training, finding an activity you enjoy is key to maintaining a consistent exercise routine.
+						</p>
+					</div>
+				</div>
 			</div>
+
 			<div className="container m-2 p-3 border rounded-3 shadow">
-				<h3 className="text-capitalize">
-					{" "}
-					what are the function of useEffeect exclude data loading?
-				</h3>
-				<p>
-					Earlier, we looked at how to express side effects that don’t
-					require any cleanup. However, some effects do. For example,
-					we might want to set up a subscription to some external data
-					source. In that case, it is important to clean up so that we
-					don’t introduce a memory leak! Let’s compare how we can do
-					it with classes and with Hooks. <br />
-					In some cases, cleaning up or applying the effect after
-					every render might create a performance problem. In class
-					components, we can solve this by writing an extra comparison
-					with prevProps or prevState inside componentDidUpdate:
-				</p>
+				<div className="row align-items-center">
+					<div className="col-md-4">
+						<img 
+							src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+							alt="Cardio vs Strength" 
+							className="img-fluid rounded shadow"
+						/>
+					</div>
+					<div className="col-md-8">
+						<h3 className="mb-3">What's the Difference Between Cardio and Strength Training?</h3>
+						<p>
+							Cardiovascular exercise and strength training are two fundamental components of a well-rounded fitness routine. Cardio exercises, like running, cycling, or swimming, primarily focus on improving heart health and burning calories. They increase your heart rate and breathing, helping to strengthen your cardiovascular system.
+						</p>
+						<p>
+							On the other hand, strength training involves resistance exercises that build muscle mass and increase bone density. This type of training is essential for maintaining muscle mass as we age and can help prevent injuries. A balanced fitness program should include both types of exercise to achieve optimal health benefits and maintain a strong, healthy body.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div className="container m-2 p-3 border rounded-3 shadow">
+				<div className="row align-items-center">
+					<div className="col-md-4">
+						<img 
+							src="https://images.unsplash.com/photo-1571019613576-2b22c76fd955?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" 
+							alt="Fitness Motivation" 
+							className="img-fluid rounded shadow"
+						/>
+					</div>
+					<div className="col-md-8">
+						<h3 className="mb-3">How to Stay Motivated in Your Fitness Journey?</h3>
+						<p>
+							Staying motivated in your fitness journey can be challenging, but there are several strategies that can help. Setting realistic, achievable goals is crucial for maintaining motivation. Break down your larger fitness goals into smaller, manageable milestones that you can celebrate along the way. <br />
+							Finding a workout buddy or joining a fitness community can provide accountability and make exercise more enjoyable. Additionally, tracking your progress through a fitness journal or app can help you see how far you've come and keep you motivated to continue. Remember that consistency is key, and even small steps forward are progress in your fitness journey.
+						</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
