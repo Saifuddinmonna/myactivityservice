@@ -1,19 +1,92 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback, memo } from "react";
 import CartBody from "./components/CartBody/CartBody";
-import FitnessBlog from "./components/FitnessBlog/FitnessBlog";
+import Blog from "./components/Blog/Blog";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Features from "./components/Features/Features";
 import Testimonials from "./components/Testimonials/Testimonials";
+
+// Memoized Timer Component
+const Timer = memo(({ isBreak, timeLeft, currentExerciseTime, onStartExercise, onStopExercise, exerciseStartTime }) => {
+	const formatTime = (seconds) => {
+		const mins = Math.floor(seconds / 60);
+		const secs = seconds % 60;
+		return `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+	};
+
+	return (
+		<div className="timer-section bg-light rounded-4 p-4 mb-4">
+			<h5 className="fw-bold mb-3">
+				<i className="fas fa-clock me-2"></i>
+				{isBreak ? 'Break Timer' : 'Exercise Timer'}
+			</h5>
+			<div className="timer-display text-center mb-3">
+				<div className="display-4 fw-bold">
+					{isBreak ? formatTime(timeLeft) : formatTime(currentExerciseTime)}
+				</div>
+				<small className="text-muted">
+					{isBreak ? 'Break Time Remaining' : 'Current Exercise Duration'}
+				</small>
+			</div>
+			<div className="timer-controls d-flex justify-content-center gap-2">
+				{!isBreak && (
+					<>
+						<button 
+							className="btn btn-success"
+							onClick={onStartExercise}
+							disabled={exerciseStartTime !== null}
+						>
+							<i className="fas fa-play me-2"></i>Start Exercise
+						</button>
+						<button 
+							className="btn btn-danger"
+							onClick={onStopExercise}
+							disabled={exerciseStartTime === null}
+						>
+							<i className="fas fa-stop me-2"></i>Stop Exercise
+						</button>
+					</>
+				)}
+			</div>
+		</div>
+	);
+});
+
+// Memoized Break Buttons Component
+const BreakButtons = memo(({ brtime, onTimeClick, timerActive }) => (
+	<div className="break-section bg-light rounded-4 p-4 mb-4">
+		<h5 className="fw-bold mb-3">
+			<i className="fas fa-coffee me-2"></i>
+			Add A Break
+		</h5>
+		<div className="break-buttons d-flex flex-wrap gap-2">
+			{[10, 20, 30, 40, 50].map((time) => (
+				<button
+					key={time}
+					onClick={onTimeClick}
+					className={`btn ${brtime === `${time}s` ? 'btn-primary' : 'btn-outline-primary'} rounded-pill px-3`}
+					disabled={timerActive}
+				>
+					{time}s
+				</button>
+			))}
+		</div>
+	</div>
+));
 
 function App() {
 	const [cartbody, setCartbody] = useState([]);
 	const [brtime, setBrtime] = useState('');
 	const [totaltime, setTotaltime] = useState([]);
 	const [sumtime, setSumtime] = useState();
+	const [timerActive, setTimerActive] = useState(false);
+	const [timeLeft, setTimeLeft] = useState(0);
+	const [isBreak, setIsBreak] = useState(false);
+	const [exerciseStartTime, setExerciseStartTime] = useState(null);
+	const [currentExerciseTime, setCurrentExerciseTime] = useState(0);
 
 	useEffect(() => {
 		fetch("/activitys.json")
@@ -30,7 +103,76 @@ function App() {
 		Getlocalcartstore();
 	}, [cartbody]);
 
-	const Totaltime = (selectProduct) => {
+	// Timer effect
+	useEffect(() => {
+		let timer;
+		if (timerActive && timeLeft > 0) {
+			timer = setInterval(() => {
+				setTimeLeft((prev) => {
+					if (prev <= 1) {
+						clearInterval(timer);
+						setTimerActive(false);
+						playNotificationSound();
+						showNotification();
+						return 0;
+					}
+					return prev - 1;
+				});
+			}, 1000);
+		}
+		return () => clearInterval(timer);
+	}, [timerActive, timeLeft]);
+
+	// Exercise timer effect
+	useEffect(() => {
+		let exerciseTimer;
+		if (exerciseStartTime) {
+			exerciseTimer = setInterval(() => {
+				const elapsed = Math.floor((Date.now() - exerciseStartTime) / 1000);
+				setCurrentExerciseTime(elapsed);
+			}, 1000);
+		}
+		return () => clearInterval(exerciseTimer);
+	}, [exerciseStartTime]);
+
+	const startTimer = useCallback((duration) => {
+		setTimeLeft(duration);
+		setTimerActive(true);
+		setIsBreak(true);
+	}, []);
+
+	const startExercise = useCallback(() => {
+		setExerciseStartTime(Date.now());
+		setIsBreak(false);
+	}, []);
+
+	const stopExercise = useCallback(() => {
+		setExerciseStartTime(null);
+		setCurrentExerciseTime(0);
+	}, []);
+
+	const playNotificationSound = () => {
+		const audio = new Audio('/notification.mp3');
+		audio.play().catch(err => console.log('Audio play failed:', err));
+	};
+
+	const showNotification = () => {
+		if (Notification.permission === "granted") {
+			new Notification(isBreak ? "Break Time Over!" : "Exercise Time Over!", {
+				body: isBreak ? "Time to get back to exercise!" : "Great job! Take a break.",
+				icon: "/images/profile.png"
+			});
+		}
+	};
+
+	// Request notification permission
+	useEffect(() => {
+		if (Notification.permission !== "granted") {
+			Notification.requestPermission();
+		}
+	}, []);
+
+	const Totaltime = useCallback((selectProduct) => {
 		let newCart = [...totaltime, parseInt(selectProduct.time)];
 		setTotaltime(newCart);
 		setSumtime(
@@ -39,13 +181,14 @@ function App() {
 				parseInt(selectProduct.time),
 			),
 		);
-	};
+	}, [totaltime]);
 
-	const Handletimeonclick = (e) => {
+	const Handletimeonclick = useCallback((e) => {
 		let timevalue = e.target.innerText;
-		setBrtime(e.target.innerText);
+		setBrtime(timevalue);
 		localStorage.setItem("Break-Time", JSON.stringify(timevalue));
-	};
+		startTimer(parseInt(timevalue));
+	}, [startTimer]);
 
 	const ActivitiesPage = () => (
 		<div className="main-container container">
@@ -58,48 +201,92 @@ function App() {
 					/>
 				))}
 			</div>
-			<div className="informationdiv border warning p-3 m-2 rounded-2 shadow">
-				<div className="d-flex align-items-center align-content-center text-center justify-content-center p-2">
-					<img className="img-fluid w-25" src="/images/profile.png" alt="" />
-					<div className="m-2">
-						<p className="fw-bolder space-top1">Saifuddin Ahammed</p>
-						<p>Mymensingh,Bangladesh</p>
+			<div className="informationdiv border p-4 rounded-4 shadow-lg">
+				<div className="profile-section text-center mb-4">
+					<div className="profile-image-container mb-3">
+						<img className="img-fluid rounded-circle border-4 border-primary" src="/images/profile.png" alt="Profile" />
+					</div>
+					<div className="profile-info">
+						<h4 className="fw-bold mb-1">Saifuddin Ahammed</h4>
+						<p className="text-muted mb-0">
+							<i className="fas fa-map-marker-alt me-2"></i>
+							Mymensingh, Bangladesh
+						</p>
 					</div>
 				</div>
-				<div className="d-flex flex-wrap">
-					<div className="bg-light rounded-circle p-2 m-3 border text-center">
-						<p>70kg <br /> Weight</p>
+
+				<Timer 
+					isBreak={isBreak}
+					timeLeft={timeLeft}
+					currentExerciseTime={currentExerciseTime}
+					onStartExercise={startExercise}
+					onStopExercise={stopExercise}
+					exerciseStartTime={exerciseStartTime}
+				/>
+
+				<div className="stats-section d-flex justify-content-around mb-4">
+					<div className="stat-card bg-light rounded-4 p-3 text-center shadow-sm">
+						<i className="fas fa-weight text-primary mb-2"></i>
+						<h5 className="mb-0">70kg</h5>
+						<small className="text-muted">Weight</small>
 					</div>
-					<div className="bg-light rounded-circle p-2 m-3 border text-center">
-						<p>5.5 <br /> Height</p>
+					<div className="stat-card bg-light rounded-4 p-3 text-center shadow-sm">
+						<i className="fas fa-ruler-vertical text-success mb-2"></i>
+						<h5 className="mb-0">5.5</h5>
+						<small className="text-muted">Height</small>
 					</div>
-					<div className="bg-light rounded-circle p-2 m-3 border text-center">
-						<p>30yrs <br /> Age</p>
+					<div className="stat-card bg-light rounded-4 p-3 text-center shadow-sm">
+						<i className="fas fa-birthday-cake text-danger mb-2"></i>
+						<h5 className="mb-0">30yrs</h5>
+						<small className="text-muted">Age</small>
 					</div>
 				</div>
-				<div className="m-2 p-2 border border-light rounded-3">
-					<p className="text-bolder fw-bolder">Add A Break</p>
-					<div className="m-2 p-2 d-flex flex-wrap cursor-click btn">
-						{[10, 20, 30, 40, 50].map((time) => (
-							<span
-								key={time}
-								onClick={Handletimeonclick}
-								className="timeitems rounded-circle bg-light border m-2 p-1">
-								{time}s
-							</span>
-						))}
+
+				<BreakButtons 
+					brtime={brtime}
+					onTimeClick={Handletimeonclick}
+					timerActive={timerActive}
+				/>
+
+				<div className="exercise-details-section">
+					<h5 className="fw-bold mb-3">
+						<i className="fas fa-chart-line me-2"></i>
+						Exercise Details
+					</h5>
+					<div className="detail-card bg-light rounded-4 p-3 mb-3 d-flex justify-content-between align-items-center">
+						<div>
+							<h6 className="mb-0">Break Time</h6>
+							<small className="text-muted">Selected break duration</small>
+						</div>
+						<span className="badge bg-primary rounded-pill px-3 py-2">{brtime || 'Not set'}</span>
+					</div>
+					<div className="detail-card bg-light rounded-4 p-3 d-flex justify-content-between align-items-center">
+						<div>
+							<h6 className="mb-0">Total Exercise Time</h6>
+							<small className="text-muted">Total time spent exercising</small>
+						</div>
+						<span className="badge bg-success rounded-pill px-3 py-2">{sumtime || 0} minutes</span>
 					</div>
 				</div>
-				<div className="m-2 p-2">
-					<h5>Exercise Details</h5>
-					<div className="bg-light p-3 m-2 d-flex justify-content-around">
-						<h5>Add a break</h5>
-						<p>{brtime}</p>
+
+				<div className="progress-section mt-4">
+					<h5 className="fw-bold mb-3">
+						<i className="fas fa-trophy me-2"></i>
+						Today's Progress
+					</h5>
+					<div className="progress mb-3" style={{height: '10px'}}>
+						<div 
+							className="progress-bar bg-success" 
+							role="progressbar" 
+							style={{width: `${Math.min((sumtime || 0) / 60 * 100, 100)}%`}}
+							aria-valuenow={sumtime || 0} 
+							aria-valuemin="0" 
+							aria-valuemax="60"
+						></div>
 					</div>
-					<div className="bg-light p-3 m-2 rounded-3 border-info d-flex justify-content-around">
-						<h5 className="bg-light d-inline-block">Exercise Details</h5>
-						<p className="d-inline-block">{sumtime}</p>
-					</div>
+					<p className="text-muted text-center mb-0">
+						{sumtime ? `${sumtime} minutes completed` : 'Start your exercise journey!'}
+					</p>
 				</div>
 			</div>
 		</div>
@@ -114,7 +301,7 @@ function App() {
 					<Route path="/features" element={<Features />} />
 					<Route path="/testimonials" element={<Testimonials />} />
 					<Route path="/activities" element={<ActivitiesPage />} />
-					<Route path="/blog" element={<FitnessBlog />} />
+					<Route path="/blog" element={<Blog />} />
 				</Routes>
 				<Footer />
 			</div>
