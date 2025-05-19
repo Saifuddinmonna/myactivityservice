@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import { useState, useEffect } from "react";
 import CartBody from "./components/CartBody/CartBody";
-import InformationDiv from "./components/InformationDiv/InformationDiv";
+import FitnessBlog from "./components/FitnessBlog/FitnessBlog";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Features from "./components/Features/Features";
@@ -114,6 +114,7 @@ function App() {
 					<Route path="/features" element={<Features />} />
 					<Route path="/testimonials" element={<Testimonials />} />
 					<Route path="/activities" element={<ActivitiesPage />} />
+					<Route path="/blog" element={<FitnessBlog />} />
 				</Routes>
 				<Footer />
 			</div>

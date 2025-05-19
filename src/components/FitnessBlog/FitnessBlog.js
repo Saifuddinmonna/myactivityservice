@@ -1,6 +1,6 @@
 import React from "react";
 
-const InformationDiv = () => {
+const FitnessBlog = () => {
 	return (
 		<div className="container text-wrap">
 			<div className="container mt-5 m-2 p-3 border rounded-3 shadow">
@@ -81,4 +81,4 @@ const InformationDiv = () => {
 	);
 };
 
-export default InformationDiv;
+export default FitnessBlog; 
