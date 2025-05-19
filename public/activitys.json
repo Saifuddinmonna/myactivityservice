@@ -3,9 +3,9 @@
 		"id": "63345da20b595464ad37a4b7",
 		"name": "Muscular Endurance",
 		"time": "20",
-		"img": "https://unsplash.com/photos/jD4MtXnsJ6w/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mzd8fGV4ZXJjaXNlfGVufDB8MHx8fDE2NjQzNzYxNDU&force=true",
-		"about": " Excepteur ipsum officia consequat nulla excepteur reprehenderit commodo reprehenderit.",
-		"age": "20- 30"
+		"img": "https://unsplash.com/photos/jD4MtXnsJ6w/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mzd8fGV4ZXJjaXNlfGVufDB8MHx8fHwxNjY0Mzc2MTQ1&force=true",
+		"about": "Excepteur ipsum officia consequat nulla excepteur reprehenderit commodo reprehenderit.",
+		"age": "20-30"
 	},
 	{
 		"id": "63345da237287d397a562346",
@@ -13,47 +13,47 @@
 		"time": "30",
 		"img": "https://unsplash.com/photos/Vz0RbclzG_w/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Nnx8ZXhlcmNpc2V8ZW58MHx8fHwxNjY0Mzc2MTEx&force=true",
 		"about": "Deserunt aute proident mollit nulla elit in minim proident.",
-		"age": "40- 50"
+		"age": "40-50"
 	},
 	{
 		"id": "63345da2d0ac420f7af94550",
-		"name": " Yoga",
+		"name": "Yoga",
 		"time": "40",
-		"img": "https://unsplash.com/photos/UUf5nxhEhAs/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NTl8fGV4ZXJjaXNlfGVufDB8MHx8fDE2NjQzNzY0ODA&force=true",
-		"about": "Quis id mollit quis qui esse aute fugiat fugiat nulla velit voluptate amet deserunt sit. ",
-		"age": "45- 55"
+		"img": "https://unsplash.com/photos/UUf5nxhEhAs/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NTl8fGV4ZXJjaXNlfGVufDB8MHx8fHwxNjY0Mzc2NDgw&force=true",
+		"about": "Quis id mollit quis qui esse aute fugiat fugiat nulla velit voluptate amet deserunt sit.",
+		"age": "45-55"
 	},
 	{
 		"id": "63345da2fa760c467f0daa85",
 		"name": "Muscular Strength",
 		"time": "50",
 		"img": "https://unsplash.com/photos/IZOAOjvwhaM/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTh8fGV4ZXJjaXNlfGVufDB8fHx8MTY2NDM3NjExMQ&force=true",
-		"about": "Tempor pariatur velit adipisicing in Lorem consectetur laboris laborum proident labore. ",
-		"age": "30- 40"
+		"about": "Tempor pariatur velit adipisicing in Lorem consectetur laboris laborum proident labore.",
+		"age": "30-40"
 	},
 	{
 		"id": "63345da2bf369cb53baefaf6",
-		"name": " Riding ",
+		"name": "Cycling",
 		"time": "60",
 		"img": "https://unsplash.com/photos/y7ywDXWJ-JU/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8Mzl8fGV4ZXJjaXNlfGVufDB8fHx8MTY2NDM3NjExNg&force=true",
-		"about": " Proident id ad est est excepteur exercitation laborum exercitation adipisicing qui fugiat.",
-		"age": " 20- 35 "
+		"about": "Proident id ad est est excepteur exercitation laborum exercitation adipisicing qui fugiat.",
+		"age": "20-35"
 	},
 	{
 		"id": "63345da237c3d50e9bf65dd7",
-		"name": "Running.",
+		"name": "Running",
 		"time": "40",
 		"img": "https://unsplash.com/photos/XFneC_rHR48/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8NTR8fGV4ZXJjaXNlfGVufDB8fHx8MTY2NDM3NjEyNQ&force=true",
 		"about": "Elit qui irure laboris sit enim sit dolore ipsum et excepteur ipsum cillum.",
-		"age": "15- 20"
+		"age": "15-20"
 	},
 	{
 		"id": "63345da23802d78e0bc731db",
-		"name": "Running.",
+		"name": "Swimming",
 		"time": "70",
-		"img": "https://unsplash.com/photos/WX7FSaiYxK8/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MzZ8fGV4ZXJjaXNlfGVufDB8MHx8fDE2NjQzNzYxNDU&force=true",
-		"about": "Officia anim do et minim quis consectetur officia. ",
-		"age": "30- 40"
+		"img": "https://unsplash.com/photos/WX7FSaiYxK8/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MzZ8fGV4ZXJjaXNlfGVufDB8MHx8fHwxNjY0Mzc2MTQ1&force=true",
+		"about": "Officia anim do et minim quis consectetur officia.",
+		"age": "30-40"
 	},
 	{
 		"id": "63345da2f520a2130ad05368",
@@ -61,7 +61,7 @@
 		"time": "30",
 		"img": "https://unsplash.com/photos/HyvE5SiKMUs/download?force=true",
 		"about": "Dolore ullamco veniam eiusmod id nostrud duis commodo aliqua elit.",
-		"age": "20- 25"
+		"age": "20-25"
 	},
 	{
 		"id": "63345da2247d705bb55a3d15",
@@ -69,6 +69,54 @@
 		"time": "20",
 		"img": "https://unsplash.com/photos/YxCrQm9XNgg/download?ixid=MnwxMjA3fDB8MXxzZWFyY2h8MTA1fHxleGVyY2lzZXxlbnwwfDB8fHwxNjY0MzgwMTgw&force=true",
 		"about": "Fugiat dolor nulla tempor magna dolor adipisicing nostrud ex.",
-		"age": "30- 40"
+		"age": "30-40"
+	},
+	{
+		"id": "63345da2247d705bb55a3d16",
+		"name": "HIIT Training",
+		"time": "45",
+		"img": "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+		"about": "High-intensity interval training for maximum calorie burn and cardiovascular fitness.",
+		"age": "25-45"
+	},
+	{
+		"id": "63345da2247d705bb55a3d17",
+		"name": "Pilates",
+		"time": "35",
+		"img": "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+		"about": "Core-strengthening exercises that improve flexibility and posture.",
+		"age": "30-50"
+	},
+	{
+		"id": "63345da2247d705bb55a3d18",
+		"name": "Boxing",
+		"time": "55",
+		"img": "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+		"about": "Full-body workout combining cardio and strength training.",
+		"age": "20-40"
+	},
+	{
+		"id": "63345da2247d705bb55a3d19",
+		"name": "Dance Fitness",
+		"time": "40",
+		"img": "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+		"about": "Fun and energetic dance-based workout for all fitness levels.",
+		"age": "15-45"
+	},
+	{
+		"id": "63345da2247d705bb55a3d20",
+		"name": "CrossFit",
+		"time": "60",
+		"img": "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+		"about": "High-intensity functional movements for overall fitness.",
+		"age": "25-45"
+	},
+	{
+		"id": "63345da2247d705bb55a3d21",
+		"name": "Meditation",
+		"time": "20",
+		"img": "https://images.unsplash.com/photo-1518611012118-696072aa579a?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+		"about": "Mindfulness practice for mental wellness and stress reduction.",
+		"age": "All Ages"
 	}
 ]

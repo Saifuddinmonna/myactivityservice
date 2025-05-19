@@ -1,14 +1,18 @@
-
 import "./App.css";
 import Header from "./components/Header/Header";
 import { useState, useEffect } from "react";
 import CartBody from "./components/CartBody/CartBody";
 import InformationDiv from "./components/InformationDiv/InformationDiv";
+import Footer from "./components/Footer/Footer";
+import Hero from "./components/Hero/Hero";
+import Testimonials from "./components/Testimonials/Testimonials";
+
 function App() {
 	const [cartbody, setCartbody] = useState([]);
 	const [brtime, setBrtime] = useState('');
 	const [totaltime, setTotaltime] = useState([]);
 	const [sumtime, setSumtime] = useState();
+
 	useEffect(() => {
 		fetch("/activitys.json")
 			.then((res) => res.json())
@@ -16,32 +20,28 @@ function App() {
 	}, []);
 
 	useEffect(() => {
-	const	Getlocalcartstore =() => {
+		const Getlocalcartstore = () => {
 			const storedCart = localStorage.getItem("Break-Time");
 
 			const shoppingCart = JSON.parse(storedCart);
 
 			setBrtime(shoppingCart);
-			console.log("brearktime",  shoppingCart);
-	};
+			console.log("brearktime", shoppingCart);
+		};
 		Getlocalcartstore();
 	}, [cartbody]);
-		
-	useEffect(() => { 
 
-		
+	useEffect(() => {
+
 	},
 	);
 
-		
 	// console.log(cartbody);
 
 	const Totaltime = (selectProduct) => {
 
-		
-		let newCart = [...totaltime, parseInt (selectProduct.time)];
+		let newCart = [...totaltime, parseInt(selectProduct.time)];
 		setTotaltime(newCart)
-		
 
 		setTotaltime(newCart);
 		console.log(totaltime);
@@ -57,31 +57,31 @@ function App() {
 				parseInt(selectProduct.time),
 			),
 		);
-		
-		
+
 	};
-console.log(brtime);
-	
-// console.log(totaltime);
+	console.log(brtime);
+
+	// console.log(totaltime);
 	const Handletimeonclick = (e) => {
 		// console.log(e.target.innerText);
 		let timevalue = {};
-		 timevalue = e.target.innerText;
+		timevalue = e.target.innerText;
 		setBrtime(e.target.innerText);
 		localStorage.setItem("Break-Time", JSON.stringify(timevalue));
-		
-		
+
 	};
 	return (
 		<div>
-			<Header></Header>
-			<div className=" main-container container ">
-				<div className=" activityscarts-maindiv ">
+			<Header />
+			<Hero />
+			<div className="main-container container">
+				<div className="activityscarts-maindiv">
 					{cartbody.map((cart) => (
 						<CartBody
 							key={cart.id}
 							cart={cart}
-							Totaltime={Totaltime}></CartBody>
+							Totaltime={Totaltime}
+						/>
 					))}
 				</div>
 				<div className="informationdiv border warning p-3 m-2 rounded-2 shadow">
@@ -93,7 +93,7 @@ console.log(brtime);
 						/>
 						<div className="m-2">
 							<p className="fw-bolder space-top1">
-								
+
 								Saifuddin Ahammed
 							</p>
 							<p>Mymensingh,Bangladesh</p>
@@ -154,7 +154,7 @@ console.log(brtime);
 							<h5>Add a break </h5>
 							<p>
 								{brtime}
-								
+
 							</p>
 						</div>
 						<div className="bg-light p-3 m-2 rounded-3 border-info d-flex justify-content-around">
@@ -167,7 +167,9 @@ console.log(brtime);
 					</div>
 				</div>
 			</div>
-			<InformationDiv></InformationDiv>
+			<Testimonials />
+			<InformationDiv />
+			<Footer />
 		</div>
 	);
 }
